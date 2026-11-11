@@ -1,21 +1,43 @@
-﻿Hero yaroslav = new Hero("Ярослав", 100);
+﻿// Герои
+using System.Diagnostics;
+
+Hero yaroslav = new Hero("Ярослав", 100);
 Hero anastasia = new Hero("Анастасия", 90);
 Hero artem = new Hero("Артём", 120);
 
 yaroslav.Health = 75;
 
 Console.WriteLine(">>> Герой 1 <<<");
-print_info(yaroslav);
+print_person(yaroslav);
 Console.WriteLine(">>> Герой 2 <<<");
-print_info(anastasia);
+print_person(anastasia);
 Console.WriteLine(">>> Герой 3 <<<");
-print_info(artem);
+print_person(artem);
 
+// Оружия
+Weapon Sword = new Weapon("Эскалибур", 46, "Меч");
+Weapon Bow = new Weapon("Охотничий лук", 5, "Лук");
+Weapon Staff = new Weapon("Жезл молний", 34, "Посох");
 
-void print_info(Hero person) {
+Console.WriteLine(">>> Оружие 1 <<<");
+print_weapon(Sword);
+Console.WriteLine(">>> Оружие 2 <<<");
+print_weapon(Bow);
+Console.WriteLine(">>> Оружие 3 <<<");
+print_weapon(Staff);
+
+// Функции
+void print_person(Hero person) {
     Console.WriteLine($"Имя - {person.Name}");
     Console.WriteLine($"Здоровье - {person.Health}");
     Console.WriteLine($"Уровень - {person.Level}");
-    Console.WriteLine($"Опыт: {person.Experience}");
+    Console.WriteLine($"Опыт - {person.Experience}");
+    Console.WriteLine();
+}
+void print_weapon(Weapon x) {
+    Console.WriteLine($"Имя - {x.Name}");
+    Console.WriteLine($"Тип оружия - {x.Type}");
+    Console.WriteLine($"Урон - {x.Damage}");
+    Console.WriteLine($"Прочность - {x.Strength}");
     Console.WriteLine();
 }
